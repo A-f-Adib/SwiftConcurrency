@@ -12,6 +12,7 @@
 		74CEDF782CD7A9FA00649448 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CEDF772CD7A9FA00649448 /* Assets.xcassets */; };
 		74CEDF7C2CD7A9FA00649448 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CEDF7B2CD7A9FA00649448 /* Preview Assets.xcassets */; };
 		74CEDF832CD7AB7100649448 /* DoCatchTryThrows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CEDF822CD7AB7100649448 /* DoCatchTryThrows.swift */; };
+		74CEDF852CD804F700649448 /* DownloadImageAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CEDF842CD804F700649448 /* DownloadImageAsync.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		74CEDF792CD7A9FA00649448 /* SwiftConcurrency.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftConcurrency.entitlements; sourceTree = "<group>"; };
 		74CEDF7B2CD7A9FA00649448 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		74CEDF822CD7AB7100649448 /* DoCatchTryThrows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoCatchTryThrows.swift; sourceTree = "<group>"; };
+		74CEDF842CD804F700649448 /* DownloadImageAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageAsync.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				74CEDF732CD7A9F200649448 /* SwiftConcurrencyApp.swift */,
 				74CEDF752CD7A9F200649448 /* ContentView.swift */,
 				74CEDF822CD7AB7100649448 /* DoCatchTryThrows.swift */,
+				74CEDF842CD804F700649448 /* DownloadImageAsync.swift */,
 				74CEDF772CD7A9FA00649448 /* Assets.xcassets */,
 				74CEDF792CD7A9FA00649448 /* SwiftConcurrency.entitlements */,
 				74CEDF7A2CD7A9FA00649448 /* Preview Content */,
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74CEDF852CD804F700649448 /* DownloadImageAsync.swift in Sources */,
 				74CEDF832CD7AB7100649448 /* DoCatchTryThrows.swift in Sources */,
 				74CEDF762CD7A9F200649448 /* ContentView.swift in Sources */,
 				74CEDF742CD7A9F200649448 /* SwiftConcurrencyApp.swift in Sources */,
