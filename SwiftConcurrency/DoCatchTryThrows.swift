@@ -9,15 +9,23 @@ import SwiftUI
 
 class DoCatchTryThrowsDataManager  {
     
-    let isActive: Bool = false
+    let isActive: Bool = true
     
     func getTitle() -> String {
         return "New Text"
     }
     
     func getTitle2() throws -> String {
+//        if isActive {
+//            return "Second function Text"
+//        } else {
+            throw URLError(.badServerResponse)
+//        }
+    }
+    
+    func getTitle3() throws -> String {
         if isActive {
-            return "New Text"
+            return "Third function Text"
         } else {
             throw URLError(.badServerResponse)
         }
@@ -35,8 +43,14 @@ class DoCatchTryThrowsViewModel: ObservableObject {
 //        self.text = newTitle
         
         do {
-            let newTitle = try manager.getTitle2()
-            self.text = newTitle
+            let secondTitle = try? manager.getTitle2()
+            if let secondTitle = secondTitle {
+                self.text = secondTitle
+            }
+            
+            let thirdTitle = try manager.getTitle3()
+            self.text = thirdTitle
+            
         } catch {
             self.text = error.localizedDescription
         }
