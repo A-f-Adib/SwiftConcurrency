@@ -12,7 +12,8 @@ struct SwiftConcurrencyApp: App {
     var body: some Scene {
         WindowGroup {
 //            ContentView()
-            DoCatchTryThrows()
+//            DoCatchTryThrows()
+            DownloadImageAsync()
         }
     }
 }
