@@ -63,9 +63,12 @@ struct AsyncAwait: View {
         .onAppear{
             Task {
                 await viewModel.addAuthor()
+                
+                viewModel.addTitle1()
+                viewModel.addTitle2()
+
             }
-//            viewModel.addTitle1()
-//            viewModel.addTitle2()
+           
         }
     }
 }
