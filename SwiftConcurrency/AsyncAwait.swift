@@ -38,7 +38,13 @@ class AsyncAwaitViewModel : ObservableObject {
         try? await Task.sleep(nanoseconds: 2_000_000_000)
             
         let author2 = "Author-2 : \(Thread.current)"
-        self.dataArray.append(author2)
+        await MainActor.run {
+            self.dataArray.append(author2)
+            
+            let author3 = "Author-3: \(Thread.current)"
+            self.dataArray.append(author3)
+        }
+       
     }
     
 }
