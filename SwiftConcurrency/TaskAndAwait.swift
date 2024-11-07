@@ -37,6 +37,26 @@ struct TaskAndAwait: View {
             Task {
                 await viewModel.fetchImage()
             }
+            
+            //Task priority
+            Task(priority: .high) {
+                print("High: \(Thread.current) : \(Task.currentPriority)")
+            }
+            Task(priority: .userInitiated) {
+                print("UserInitiated: \(Thread.current) : \(Task.currentPriority)")
+            }
+            Task(priority: .medium) {
+                print("Medium: \(Thread.current) : \(Task.currentPriority)")
+            }
+            Task(priority: .low) {
+                print("Low: \(Thread.current) : \(Task.currentPriority)")
+            }
+            Task(priority: .utility) {
+                print("Utility: \(Thread.current) : \(Task.currentPriority)")
+            }
+            Task(priority: .background) {
+                print("Background: \(Thread.current) : \(Task.currentPriority)")
+            }
         }
     }
 }
