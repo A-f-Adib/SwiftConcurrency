@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7467B3482CD826A700F586F0 /* AsyncAwait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7467B3472CD826A700F586F0 /* AsyncAwait.swift */; };
+		74C206AF2CDD5A01007265DF /* TaskAndAwait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C206AE2CDD5A01007265DF /* TaskAndAwait.swift */; };
 		74CEDF742CD7A9F200649448 /* SwiftConcurrencyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CEDF732CD7A9F200649448 /* SwiftConcurrencyApp.swift */; };
 		74CEDF762CD7A9F200649448 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CEDF752CD7A9F200649448 /* ContentView.swift */; };
 		74CEDF782CD7A9FA00649448 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CEDF772CD7A9FA00649448 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		7467B3472CD826A700F586F0 /* AsyncAwait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwait.swift; sourceTree = "<group>"; };
+		74C206AE2CDD5A01007265DF /* TaskAndAwait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAndAwait.swift; sourceTree = "<group>"; };
 		74CEDF702CD7A9F200649448 /* SwiftConcurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftConcurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74CEDF732CD7A9F200649448 /* SwiftConcurrencyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftConcurrencyApp.swift; sourceTree = "<group>"; };
 		74CEDF752CD7A9F200649448 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				74CEDF822CD7AB7100649448 /* DoCatchTryThrows.swift */,
 				74CEDF842CD804F700649448 /* DownloadImageAsync.swift */,
 				7467B3472CD826A700F586F0 /* AsyncAwait.swift */,
+				74C206AE2CDD5A01007265DF /* TaskAndAwait.swift */,
 				74CEDF772CD7A9FA00649448 /* Assets.xcassets */,
 				74CEDF792CD7A9FA00649448 /* SwiftConcurrency.entitlements */,
 				74CEDF7A2CD7A9FA00649448 /* Preview Content */,
@@ -153,6 +156,7 @@
 				7467B3482CD826A700F586F0 /* AsyncAwait.swift in Sources */,
 				74CEDF762CD7A9F200649448 /* ContentView.swift in Sources */,
 				74CEDF742CD7A9F200649448 /* SwiftConcurrencyApp.swift in Sources */,
+				74C206AF2CDD5A01007265DF /* TaskAndAwait.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
