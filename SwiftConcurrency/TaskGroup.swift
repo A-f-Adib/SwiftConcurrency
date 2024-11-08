@@ -7,11 +7,34 @@
 
 import SwiftUI
 
+class TaskGroupDataManager {
+    
+    func fetchImage(urlString: String) async throws -> NSImage {
+        
+        guard let url = URL(string: urlString) else {
+            throw URLError(.badURL)
+        }
+        
+        do {
+          
+            let (data, _ ) = try await URLSession.shared.data(from: url)
+            if let image = NSImage(data: data) {
+                return image
+            } else {
+                throw URLError(.badURL)
+            }
+            
+        } catch  {
+            throw error
+        }
+    }
+}
+
 
 class TaskGroupViewModel: ObservableObject {
     
     @Published var images : [NSImage] = []
-    
+    let manager = TaskGroupDataManager()
 }
 
 
