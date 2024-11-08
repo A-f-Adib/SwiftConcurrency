@@ -9,6 +9,36 @@ import SwiftUI
 
 class TaskGroupDataManager {
     
+    func fetchImageWithTaskGroup() async throws -> [NSImage] {
+        let urlString = [ "https://picsum.photos/300",
+                          "https://picsum.photos/300",
+                          "https://picsum.photos/300",
+                          "https://picsum.photos/300",
+                          "https://picsum.photos/300"
+        ]
+        
+        return try await withThrowingTaskGroup(of: NSImage?.self) { group in
+            var images: [NSImage] = []
+            images.reserveCapacity(urlString.count)
+            
+            for urlString in urlString {
+                group.addTask {
+                    try? await self.fetchImage(urlString: urlString)
+                }
+            }
+            
+            for try await image in group {
+                if let image = image {
+                    images.append(image)
+                }
+            }
+            
+            return images
+        }
+    }
+    
+    
+    
     func fetchImage(urlString: String) async throws -> NSImage {
         
         guard let url = URL(string: urlString) else {
