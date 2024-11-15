@@ -9,6 +9,8 @@ import SwiftUI
 
 class ContinuationNetworkManager {
     
+    
+    //main func of continuation
     func getData(url: URL) async throws -> Data {
         return try await withCheckedThrowingContinuation { continuation in
             URLSession.shared.dataTask(with: url) { data, response, error in
@@ -21,6 +23,13 @@ class ContinuationNetworkManager {
                 }
             }
             .resume()
+        }
+    }
+    
+    //func that is not async but fetch the image with completion handler
+    func getImageFromDataBase(completionHandler : @escaping (_ image: NSImage) -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            completionHandler(NSImage(symbolName: "heart.fill", variableValue: 2.0)!)
         }
     }
 }
