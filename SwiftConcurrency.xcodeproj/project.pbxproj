@@ -17,6 +17,7 @@
 		74CEDF7C2CD7A9FA00649448 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CEDF7B2CD7A9FA00649448 /* Preview Assets.xcassets */; };
 		74CEDF832CD7AB7100649448 /* DoCatchTryThrows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CEDF822CD7AB7100649448 /* DoCatchTryThrows.swift */; };
 		74CEDF852CD804F700649448 /* DownloadImageAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CEDF842CD804F700649448 /* DownloadImageAsync.swift */; };
+		74DF54B32CE7AF02006D5092 /* ThrowingContinuation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DF54B22CE7AF02006D5092 /* ThrowingContinuation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		74CEDF7B2CD7A9FA00649448 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		74CEDF822CD7AB7100649448 /* DoCatchTryThrows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoCatchTryThrows.swift; sourceTree = "<group>"; };
 		74CEDF842CD804F700649448 /* DownloadImageAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageAsync.swift; sourceTree = "<group>"; };
+		74DF54B22CE7AF02006D5092 /* ThrowingContinuation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowingContinuation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				74C206AE2CDD5A01007265DF /* TaskAndAwait.swift */,
 				746BAFAC2CDE92AD00C52ADC /* TaskGroup.swift */,
 				743E53BE2CE3CE330052626C /* GlobalActors.swift */,
+				74DF54B22CE7AF02006D5092 /* ThrowingContinuation.swift */,
 				74CEDF772CD7A9FA00649448 /* Assets.xcassets */,
 				74CEDF792CD7A9FA00649448 /* SwiftConcurrency.entitlements */,
 				74CEDF7A2CD7A9FA00649448 /* Preview Content */,
@@ -162,6 +165,7 @@
 				743E53BF2CE3CE330052626C /* GlobalActors.swift in Sources */,
 				7467B3482CD826A700F586F0 /* AsyncAwait.swift in Sources */,
 				74CEDF762CD7A9F200649448 /* ContentView.swift in Sources */,
+				74DF54B32CE7AF02006D5092 /* ThrowingContinuation.swift in Sources */,
 				746BAFAD2CDE92AD00C52ADC /* TaskGroup.swift in Sources */,
 				74CEDF742CD7A9F200649448 /* SwiftConcurrencyApp.swift in Sources */,
 				74C206AF2CDD5A01007265DF /* TaskAndAwait.swift in Sources */,
