@@ -33,7 +33,7 @@ extension StructClassActor {
         let objectA = MyStruct(title: "Starting Title")
         print("ObjectA : ", objectA.title)
         
-        print("Pass the value of objectA to objectB ")
+        print("Pass the VALUES of objectA to objectB ")
         var objectB = objectA
         print("ObjectB :", objectB.title)
         
@@ -59,7 +59,7 @@ extension StructClassActor {
         let objectA = MyClass(title: "Starting Title")
         print("ObjectA : ", objectA.title)
         
-        print("Pass the value of objectA to objectB ")
+        print("Pass the REFERENCES of objectA to objectB ")
         let objectB = objectA
         print("ObjectB :", objectB.title)
         
@@ -77,6 +77,13 @@ extension StructClassActor {
                 ObjectA : Second Title
                 ObjectB : Second Title
         */
+        
+        //MARK: ARC: Automatic Reference Counter
+        /* -> It is used to track and manage the apps memory usage. ARC autometically frees up memory used by class instances when those intances are no longer needed.
+           -> Every instance of a class has a property called referece count.
+            So if reference count is greater than 0, the instance is still
+            kept in memory otherwise it will be removed from the memory.
+         */
     }
 }
 
