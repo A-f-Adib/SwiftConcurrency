@@ -54,8 +54,22 @@ class continuationViewModel: ObservableObject {
 }
 
 struct ThrowingContinuation: View {
+    
+    @StateObject private var viewModel = continuationViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+       
+        ZStack {
+            if let image = viewModel.image {
+                Image(nsImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200, height: 200)
+            }
+        }
+        .task {
+            await viewModel.getImage()
+        }
     }
 }
 
