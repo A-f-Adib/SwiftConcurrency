@@ -18,6 +18,7 @@
 		74CEDF832CD7AB7100649448 /* DoCatchTryThrows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CEDF822CD7AB7100649448 /* DoCatchTryThrows.swift */; };
 		74CEDF852CD804F700649448 /* DownloadImageAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CEDF842CD804F700649448 /* DownloadImageAsync.swift */; };
 		74DF54B32CE7AF02006D5092 /* ThrowingContinuation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DF54B22CE7AF02006D5092 /* ThrowingContinuation.swift */; };
+		74DF54B52CE7D2FD006D5092 /* StructClassActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DF54B42CE7D2FD006D5092 /* StructClassActor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		74CEDF822CD7AB7100649448 /* DoCatchTryThrows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoCatchTryThrows.swift; sourceTree = "<group>"; };
 		74CEDF842CD804F700649448 /* DownloadImageAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageAsync.swift; sourceTree = "<group>"; };
 		74DF54B22CE7AF02006D5092 /* ThrowingContinuation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowingContinuation.swift; sourceTree = "<group>"; };
+		74DF54B42CE7D2FD006D5092 /* StructClassActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructClassActor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				746BAFAC2CDE92AD00C52ADC /* TaskGroup.swift */,
 				743E53BE2CE3CE330052626C /* GlobalActors.swift */,
 				74DF54B22CE7AF02006D5092 /* ThrowingContinuation.swift */,
+				74DF54B42CE7D2FD006D5092 /* StructClassActor.swift */,
 				74CEDF772CD7A9FA00649448 /* Assets.xcassets */,
 				74CEDF792CD7A9FA00649448 /* SwiftConcurrency.entitlements */,
 				74CEDF7A2CD7A9FA00649448 /* Preview Content */,
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74CEDF852CD804F700649448 /* DownloadImageAsync.swift in Sources */,
+				74DF54B52CE7D2FD006D5092 /* StructClassActor.swift in Sources */,
 				74CEDF832CD7AB7100649448 /* DoCatchTryThrows.swift in Sources */,
 				743E53BF2CE3CE330052626C /* GlobalActors.swift in Sources */,
 				7467B3482CD826A700F586F0 /* AsyncAwait.swift in Sources */,
