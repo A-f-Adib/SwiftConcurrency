@@ -26,6 +26,34 @@ struct StructClassActor: View {
     }
 }
 
+
+extension StructClassActor {
+    
+    private func structTest() {
+        let objectA = MyStruct(title: "Starting Title")
+        print("ObjectA : ", objectA.title)
+        
+        print("Pass the value of objectA to objectB ")
+        var objectB = objectA
+        print("ObjectB :", objectB.title)
+        
+        objectB.title = "Second Tilte"
+        print("ObjectB title changed")
+        
+        print("ObjectA : ", objectA.title)
+        print("ObjectB : ", objectB.title)
+        
+        /*
+        OutPut:
+                ObjectA : Statring Title
+                ObjectB : Starting Title
+                ObjectB title changed
+                ObjectA : Starting Title
+                ObjectB : Second Title
+        */
+    }
+}
+
 #Preview {
     StructClassActor()
 }
