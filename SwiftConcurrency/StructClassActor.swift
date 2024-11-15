@@ -20,6 +20,21 @@ class MyClass {
     }
 }
 
+
+actor MyActor {
+    var title: String
+    
+    init(title: String) {
+        self.title = title
+    }
+    
+    func updateTitle(newTitle: String) {
+        title = newTitle
+    }
+}
+
+
+
 struct StructClassActor: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
@@ -84,6 +99,25 @@ extension StructClassActor {
             So if reference count is greater than 0, the instance is still
             kept in memory otherwise it will be removed from the memory.
          */
+    }
+    
+    
+    private func ActorTest() {
+        
+        Task {
+            let objectA = MyActor(title: "Starting Title")
+            await print("ObjectA : ", objectA.title)
+            
+            print("Pass the REFERENCES of objectA to objectB ")
+            let objectB = objectA
+            await print("ObjectB :", objectB.title)
+            
+            await objectB.updateTitle(newTitle: "Second Title")
+            print("ObjectB title changed")
+            
+            await print("ObjectA : ", objectA.title)
+            await print("ObjectB : ", objectB.title)
+        }
     }
 }
 
