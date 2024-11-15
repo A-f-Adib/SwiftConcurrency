@@ -26,13 +26,25 @@ class ContinuationNetworkManager {
         }
     }
     
+    
     //func that is not async but fetch the image with completion handler
     func getImageFromDataBase(completionHandler : @escaping (_ image: NSImage) -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             completionHandler(NSImage(symbolName: "heart.fill", variableValue: 2.0)!)
         }
     }
+    
+    //func that converts above non-async to async func
+    func getImageFromDataBase() async -> NSImage {
+        await withCheckedContinuation { continuation in
+            getImageFromDataBase { image in
+                continuation.resume(returning: image)
+            }
+        }
+    }
 }
+
+
 
 class continuationViewModel: ObservableObject {
     
@@ -57,9 +69,7 @@ class continuationViewModel: ObservableObject {
         } catch {
             print(error)
         }
-        
     }
-    
 }
 
 struct ThrowingContinuation: View {
