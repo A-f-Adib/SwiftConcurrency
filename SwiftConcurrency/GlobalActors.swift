@@ -22,7 +22,8 @@ class GlobalActorViewModel: ObservableObject {
     @Published var dataArray: [String] = []
     let manager = firstGlobalActor.shared
     
-    @firstGlobalActor func getData() {
+    @firstGlobalActor
+    func getData() {
         
         Task {
             let data = await manager.getDataFromDatabase()
@@ -36,7 +37,17 @@ struct GlobalActors: View {
     @StateObject private var viewModel = GlobalActorViewModel()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack {
+                ForEach(viewModel.dataArray, id: \.self) {
+                    Text($0)
+                        .font(.headline)
+                }
+            }
+        }
+        .task {
+            await viewModel.getData()
+        }
     }
 }
 
