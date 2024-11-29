@@ -26,8 +26,22 @@ actor AsyncPublisherDataManager {
 
 class AsyncPublisherViewModel : ObservableObject {
     
-    @Published var dataArray: [String] = []
+    @MainActor @Published var dataArray: [String] = []
     let manager = AsyncPublisherDataManager()
+    
+    init() {
+        addSubscribers()
+    }
+    
+    private func addSubscribers() {
+        Task {
+            for await value in await manager.$myData.values {
+                await MainActor.run(body: {
+                    self.dataArray = value
+                })
+            }
+        }
+    }
     
     func start() async {
         await manager.addData()
