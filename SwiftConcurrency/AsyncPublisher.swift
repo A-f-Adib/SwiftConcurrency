@@ -10,13 +10,31 @@ import SwiftUI
 actor AsyncPublisherDataManager {
     
     @Published var myData : [String] = []
+    
+    func addData() async {
+        myData.append("Apple")
+        try? await Task.sleep(nanoseconds: 2_000_000_000)
+        myData.append("Orange")
+        try? await Task.sleep(nanoseconds: 2_000_000_000)
+        myData.append("Banana")
+        try? await Task.sleep(nanoseconds: 2_000_000_000)
+        myData.append("Watermelon")
+    }
 }
+
+
 
 class AsyncPublisherViewModel : ObservableObject {
     
     @Published var dataArray: [String] = []
+    let manager = AsyncPublisherDataManager()
     
+    func start() async {
+        await manager.addData()
+    }
 }
+
+
 
 struct AsyncPublisher: View {
     
@@ -30,6 +48,9 @@ struct AsyncPublisher: View {
                         .font(.headline)
                 }
             }
+        }
+        .task {
+            await viewModel.start()
         }
     }
 }
