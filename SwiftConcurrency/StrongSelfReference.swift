@@ -44,6 +44,16 @@ final class StrongSelfReferenceViewModel: ObservableObject {
         }
     }
     
+    
+    //This is weak reference
+    func UpdateData4() {
+        Task { [weak self] in
+            if let data = await self?.dataManager.getData() {
+                self?.data = data
+            }
+        }
+    }
+    
 }
 
 
