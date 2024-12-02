@@ -7,10 +7,27 @@
 
 import SwiftUI
 
+
+final class StrongSelfReferenceDataManager {
+    
+    func getData() async -> String {
+        "Update data"
+    }
+}
+
+
+
 final class StrongSelfReferenceViewModel: ObservableObject {
     
     @Published var data : String = "Some title"
+    let dataManager = StrongSelfReferenceDataManager()
+    
+    func UpdateData() async {
+        data = await dataManager.getData()
+    }
 }
+
+
 
 struct StrongSelfReference: View {
     
@@ -18,6 +35,9 @@ struct StrongSelfReference: View {
     
     var body: some View {
         Text(viewModel.data)
+            .onAppear {
+                viewModel.UpdateData()
+            }
     }
 }
 
