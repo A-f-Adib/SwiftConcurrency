@@ -22,9 +22,28 @@ final class StrongSelfReferenceViewModel: ObservableObject {
     @Published var data : String = "Some title"
     let dataManager = StrongSelfReferenceDataManager()
     
-    func UpdateData() async {
-        data = await dataManager.getData()
+    
+    //Implies Strong reference
+    func UpdateData() {
+        Task {
+            data = await dataManager.getData()
+        }
     }
+    
+    //Implies Stong reference
+    func UpdateData2(data: String) {
+        Task {
+            self.data = await dataManager.getData()
+        }
+    }
+    
+    //Implies strong refence
+    func UpdateData3() {
+        Task { [self] in
+            self.data = await dataManager.getData()
+        }
+    }
+    
 }
 
 
