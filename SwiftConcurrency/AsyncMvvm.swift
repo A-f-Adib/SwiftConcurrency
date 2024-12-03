@@ -31,10 +31,26 @@ final class AsyncMvViewModel: ObservableObject {
     let managerClass = ManagerClass()
     let managerActor = ManagerActor()
     
+    @Published private(set) var myData: String = "Starting text"
+    private var tasks: [Task<Void, Never>] = []
+    
+    
+    func cancelTasks() {
+        tasks.forEach({ $0.cancel() })
+        tasks = []
+    }
+    
+    
     func onClickButton() {
-        Task {
-            
+        
+        let task = Task {
+            do {
+                myData = try await managerClass.getData()
+            } catch {
+                print(error)
+            }
         }
+        tasks.append(task)
     }
     
 }
