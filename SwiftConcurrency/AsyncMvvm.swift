@@ -25,7 +25,7 @@ actor ManagerActor {
 }
 
 
-
+@MainActor
 final class AsyncMvViewModel: ObservableObject {
     
     let managerClass = ManagerClass()
@@ -45,14 +45,14 @@ final class AsyncMvViewModel: ObservableObject {
         
         let task = Task {
             do {
-                myData = try await managerClass.getData()
+//                myData = try await managerClass.getData()
+                myData = try await managerActor.getData()
             } catch {
                 print(error)
             }
         }
         tasks.append(task)
     }
-    
 }
 
 
@@ -62,8 +62,17 @@ struct AsyncMvvm: View {
     @StateObject private var viewModel = AsyncMvViewModel()
     
     var body: some View {
-        Button("Click") {
-            viewModel.onClickButton()
+        VStack {
+            Button("Click") {
+                viewModel.onClickButton()
+            }
+            
+            Button(viewModel.myData) {
+                viewModel.onClickButton()
+            }
+        }
+        .onDisappear {
+            viewModel.cancelTasks()
         }
     }
 }
