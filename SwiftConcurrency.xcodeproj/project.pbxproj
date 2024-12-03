@@ -14,6 +14,7 @@
 		746BAFAD2CDE92AD00C52ADC /* TaskGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746BAFAC2CDE92AD00C52ADC /* TaskGroup.swift */; };
 		74C206AF2CDD5A01007265DF /* TaskAndAwait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C206AE2CDD5A01007265DF /* TaskAndAwait.swift */; };
 		74CD83FE2CFF68AF0060AE06 /* AsyncMvvm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CD83FD2CFF68AF0060AE06 /* AsyncMvvm.swift */; };
+		74CD84002CFF910C0060AE06 /* RefreshableModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CD83FF2CFF910C0060AE06 /* RefreshableModifier.swift */; };
 		74CEDF742CD7A9F200649448 /* SwiftConcurrencyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CEDF732CD7A9F200649448 /* SwiftConcurrencyApp.swift */; };
 		74CEDF762CD7A9F200649448 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CEDF752CD7A9F200649448 /* ContentView.swift */; };
 		74CEDF782CD7A9FA00649448 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CEDF772CD7A9FA00649448 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		746BAFAC2CDE92AD00C52ADC /* TaskGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroup.swift; sourceTree = "<group>"; };
 		74C206AE2CDD5A01007265DF /* TaskAndAwait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAndAwait.swift; sourceTree = "<group>"; };
 		74CD83FD2CFF68AF0060AE06 /* AsyncMvvm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncMvvm.swift; sourceTree = "<group>"; };
+		74CD83FF2CFF910C0060AE06 /* RefreshableModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableModifier.swift; sourceTree = "<group>"; };
 		74CEDF702CD7A9F200649448 /* SwiftConcurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftConcurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74CEDF732CD7A9F200649448 /* SwiftConcurrencyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftConcurrencyApp.swift; sourceTree = "<group>"; };
 		74CEDF752CD7A9F200649448 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				7411B47E2CFA27850040EDBF /* AsyncPublisher.swift */,
 				7452191A2CFE293E00FC89B8 /* StrongSelfReference.swift */,
 				74CD83FD2CFF68AF0060AE06 /* AsyncMvvm.swift */,
+				74CD83FF2CFF910C0060AE06 /* RefreshableModifier.swift */,
 				74CEDF772CD7A9FA00649448 /* Assets.xcassets */,
 				74CEDF792CD7A9FA00649448 /* SwiftConcurrency.entitlements */,
 				74CEDF7A2CD7A9FA00649448 /* Preview Content */,
@@ -180,6 +183,7 @@
 				7467B3482CD826A700F586F0 /* AsyncAwait.swift in Sources */,
 				74CEDF762CD7A9F200649448 /* ContentView.swift in Sources */,
 				74DF54B32CE7AF02006D5092 /* ThrowingContinuation.swift in Sources */,
+				74CD84002CFF910C0060AE06 /* RefreshableModifier.swift in Sources */,
 				746BAFAD2CDE92AD00C52ADC /* TaskGroup.swift in Sources */,
 				74CEDF742CD7A9F200649448 /* SwiftConcurrencyApp.swift in Sources */,
 				7411B47F2CFA27850040EDBF /* AsyncPublisher.swift in Sources */,
