@@ -7,27 +7,48 @@
 
 import SwiftUI
 
+
 final class ManagerClass {
     
+    func getData() async throws -> String  {
+        "Some Data"
+    }
 }
+
+
 
 actor ManagerActor {
     
+    func getData() async throws -> String  {
+        "Some Data"
+    }
 }
+
+
 
 final class AsyncMvViewModel: ObservableObject {
     
     let managerClass = ManagerClass()
     let managerActor = ManagerActor()
     
+    func onClickButton() {
+        Task {
+            
+        }
+    }
+    
 }
+
+
 
 struct AsyncMvvm: View {
     
     @StateObject private var viewModel = AsyncMvViewModel()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button("Click") {
+            viewModel.onClickButton()
+        }
     }
 }
 
