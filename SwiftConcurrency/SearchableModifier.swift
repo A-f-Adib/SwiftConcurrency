@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 
 struct Restaurant: Identifiable, Hashable {
@@ -37,8 +38,46 @@ final class RestaurantManager {
 final class SearchableViewModel: ObservableObject {
     
     @Published private(set) var allRestaurants: [Restaurant] = []
+    @Published private(set) var filteredRestaurants: [Restaurant] = []
     let manager = RestaurantManager()
     @Published var searchText : String = ""
+    private var cancellables = Set<AnyCancellable>()
+    
+    var isSearching: Bool {
+        !searchText.isEmpty
+    }
+    
+    
+    init() {
+        addSubscribers()
+    }
+    
+    
+    private func addSubscribers() {
+        $searchText
+            .debounce(for: 0.3, scheduler: DispatchQueue.main)
+            .sink { [weak self] searchText in
+                self?.filterRestaurents(searchText: searchText)
+            }
+            .store(in: &cancellables)
+    }
+    
+    
+    private func filterRestaurents(searchText: String) {
+        
+        guard !searchText.isEmpty else {
+            filteredRestaurants = []
+            return
+        }
+        
+        let search = searchText.lowercased()
+        filteredRestaurants = allRestaurants.filter( { restaurant in
+            let titleContainSearch = restaurant.title.lowercased().contains(search)
+            let cuisineContainSearch = restaurant.cuisine.rawValue.lowercased().contains(search)
+            return titleContainSearch || cuisineContainSearch
+        })
+    }
+    
     
     func loadRestaurants() async {
         do {
@@ -59,7 +98,7 @@ struct SearchableModifier: View {
       
         ScrollView {
             VStack {
-                ForEach(viewModel.allRestaurants) { restaurant in
+                ForEach(viewModel.isSearching ? viewModel.filteredRestaurants : viewModel.allRestaurants) { restaurant in
                     restaurantRow(restaurant: restaurant)
                 }
             }
