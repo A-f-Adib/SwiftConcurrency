@@ -41,12 +41,21 @@ struct RefreshableModifier: View {
     
     var body: some View {
        
-        ScrollView {
-            VStack {
-                ForEach(viewModel.items, id: \.self) { item in
-                        Text(item)
-                        .font(.headline)
+        NavigationStack {
+            ScrollView {
+                VStack {
+                    ForEach(viewModel.items, id: \.self) { item in
+                            Text(item)
+                            .font(.headline)
+                    }
                 }
+            }
+            .refreshable {
+                viewModel.loadData()
+            }
+            .navigationTitle("Refreshable Modifier")
+            .onAppear {
+                viewModel.loadData()
             }
         }
     }
