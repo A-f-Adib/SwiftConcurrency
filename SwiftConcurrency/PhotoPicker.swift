@@ -12,7 +12,25 @@ import PhotosUI
 final class PhotoPickerViewModel : ObservableObject {
     
     @Published private(set) var selectedImage: NSImage? = nil
-    @Published var imageSelection : PhotosPickerItem? = nil
+    @Published var imageSelection : PhotosPickerItem? = nil {
+        didSet {
+            setImage(from: imageSelection)
+        }
+    }
+    
+    private func setImage(from selection: PhotosPickerItem?) {
+        guard let selection else { return }
+        
+        Task {
+            if let data = try? await selection.loadTransferable(type: Data.self) {
+                if let nsImage = NSImage(data: data) {
+                    selectedImage = nsImage
+                    return
+                }
+            }
+        }
+    }
+    
 }
 
 struct PhotoPicker: View {
@@ -20,7 +38,7 @@ struct PhotoPicker: View {
     @StateObject private var viewModel = PhotoPickerViewModel()
     
     var body: some View {
-        VStack {
+        VStack(spacing: 40) {
             Text("Hello")
             
             if let image = viewModel.selectedImage {
