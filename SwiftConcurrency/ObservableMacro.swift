@@ -7,21 +7,37 @@
 
 import SwiftUI
 
-class observableViewModel: ObservableObject {
-    @Published var title = ""
+
+actor TitleDatabase {
     
-    func updateTitle() {
-        title = "Some new title"
+    func getNewTitle() -> String {
+        "Some new Title"
     }
 }
 
+
+
+class observableViewModel: ObservableObject {
+    
+    let database = TitleDatabase()
+    @Published var title = ""
+    
+    func updateTitle() async {
+        title = await database.getNewTitle()
+    }
+}
+
+
+
 struct ObservableMacro: View {
+    
     @StateObject private var viewModel = observableViewModel()
     
     var body: some View {
+        
         Text(viewModel.title)
             .task {
-                viewModel.updateTitle()
+                await viewModel.updateTitle()
             }
     }
 }
